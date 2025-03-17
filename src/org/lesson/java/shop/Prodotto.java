@@ -26,20 +26,30 @@ public class Prodotto {
     Random rand = new Random();
 
    
-   public String nome;
-   public String descrizione;
-   public BigDecimal prezzo;
-   public BigDecimal iva;
-   public int codice;
-   public String  concatenato;
+    private String nome;
+   private String descrizione;
+   private BigDecimal prezzo;
+   private BigDecimal iva;
+   private int codice;
+   private String  concatenato;
 
    public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva){
     this.nome = nome;
-    this.codice = rand.nextInt(906708798);
+    this.codice = rand.nextInt(99999);
     this.descrizione = descrizione;
     this.prezzo = prezzo;
     this.iva = iva;
     this.concatenato = nome + "-" + codice;
+   }
+   public String getNome(){
+    return this.nome;
+   }
+   public String getDescrizione(){
+    return this.descrizione;
+   }
+
+   public int getCodice(){
+    return this.codice;
    }
 
    public BigDecimal getPrezzoBase(){
@@ -57,5 +67,10 @@ public class Prodotto {
       return this.concatenato = nome + "-" + codice;
     }
     return null;
+   }
+
+
+   public void setName(String nome){
+    this.nome = nome;
    }
 }
