@@ -18,6 +18,7 @@
 
 package org.lesson.java.shop;
 
+import java.math.BigDecimal;
 import java.util.Random;
 
 public class Prodotto {
@@ -27,17 +28,34 @@ public class Prodotto {
    
    public String nome;
    public String descrizione;
-   public float prezzo;
-   public float iva;
+   public BigDecimal prezzo;
+   public BigDecimal iva;
    public int codice;
    public String  concatenato;
 
-   public Prodotto(String nome, String descrizione, float prezzo){
+   public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva){
     this.nome = nome;
-    this.codice = rand.nextInt(123131 , 906708798);
+    this.codice = rand.nextInt(906708798);
     this.descrizione = descrizione;
     this.prezzo = prezzo;
-    this.iva = prezzo + (prezzo * 0.22f);
+    this.iva = iva;
     this.concatenato = nome + "-" + codice;
+   }
+
+   public BigDecimal getPrezzoBase(){
+    return this.prezzo;
+   }
+
+   public BigDecimal getPrezzoIva(){
+    if(prezzo != null && iva != null){
+        return prezzo.add(prezzo.multiply(iva));
+    }
+    return null;
+   }
+   public String getNomeEsteso(){
+    if (nome != null){
+      return this.concatenato = nome + "-" + codice;
+    }
+    return null;
    }
 }
