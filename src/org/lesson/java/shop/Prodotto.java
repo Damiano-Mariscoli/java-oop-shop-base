@@ -33,12 +33,12 @@ public class Prodotto {
    private int codice;
    private String  concatenato;
 
-   public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal iva){
+   public Prodotto(String nome, String descrizione, BigDecimal prezzo){
     this.nome = nome;
     this.codice = rand.nextInt(99999);
     this.descrizione = descrizione;
     this.prezzo = prezzo;
-    this.iva = iva;
+    this.iva = new BigDecimal(0.22);
     this.concatenato = nome + "-" + codice;
    }
    public String getNome(){
