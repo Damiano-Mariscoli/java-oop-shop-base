@@ -7,7 +7,7 @@ public class Smartphone extends Prodotto {
 
     public Smartphone(String nome, String descrizione, BigDecimal prezzo, int memoria){
         Random rand =  new Random();
-        super(nome, descrizione, prezzo);
+        super(nome, prezzo);
         this.IMEI = rand.nextInt(99999);
         this.memoria = memoria;
     }
@@ -18,6 +18,9 @@ public class Smartphone extends Prodotto {
     public int getMemory(){
         return this.memoria;
     }    
-
+    @Override
+    public String toString(){
+       return super.toString() + getIMEI() + getMemory();
+    }
 
 }

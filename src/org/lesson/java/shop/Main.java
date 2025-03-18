@@ -17,25 +17,22 @@ public class Main {
    //    System.out.println(penna.getNomeEsteso());
 
    
-   Cuffie Cuffie = new Cuffie("BoseSupreme", "Cuffie belle", new BigDecimal(235), "white", false);   
+   Cuffie BoseSupreme = new Cuffie("BoseSupreme", new BigDecimal(235), "white", false);   
 
    Televisori Televisori = new Televisori("120 x 200", true, "TSamsung212", "televisore bello", new BigDecimal(850) );
    Smartphone Smartphone = new Smartphone("iphone 16", "telefono bello", new BigDecimal(1500), 256);
 
-   // System.out.println(Smartphone.getIMEI());
-   // System.out.println(Smartphone.getNome());
-   // System.out.println(Smartphone.getMemory());
+   System.out.println(Televisori.getNomeEsteso());
+   System.out.println(Televisori.getPrezzoIva());
    
 
-   // System.out.println(Televisori.getCodice());
-   // System.out.println(Televisori.getDimensioni());
-   // System.out.println(Televisori.getSmart());
+   System.out.println(Smartphone.getNomeEsteso());
+   System.out.println(Smartphone.getPrezzoIva());
 
-   System.out.println(Cuffie.getNomeEsteso());
-   System.out.println(Cuffie.getColor());
-   System.out.println(Cuffie.getWireless());
+   System.out.println(BoseSupreme.getNomeEsteso());
+   System.out.println(BoseSupreme.getPrezzoIva());
    }
    
-  
+   
     
 }

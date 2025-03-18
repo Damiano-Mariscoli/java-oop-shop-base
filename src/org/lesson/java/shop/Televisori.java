@@ -3,19 +3,24 @@ package org.lesson.java.shop;
 import java.math.BigDecimal;
 
 public class Televisori extends Prodotto{
-    private String dimensioni;
+    private int dimensioni;
     private Boolean smart;
-    public Televisori(String dimensioni, Boolean smart, String nome, String descrizione, BigDecimal prezzo){
-        super(nome, descrizione, prezzo);
+    public Televisori(int dimensioni, Boolean smart, String nome, BigDecimal prezzo){
+        super(nome, prezzo);
         this.dimensioni = dimensioni;
         this.smart = smart;
 
     }
 
-    public String getDimensioni(){
+    public int getDimensioni(){
         return this.dimensioni;
     }
     public Boolean getSmart(){
         return this.smart;
     }
+
+    @Override
+   public String toString(){
+      return super.toString() + getDimensioni() + getSmart();
+   }
 }

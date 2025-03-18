@@ -33,10 +33,9 @@ public class Prodotto {
    private int codice;
    private String  concatenato;
 
-   public Prodotto(String nome, String descrizione, BigDecimal prezzo){
+   public Prodotto(String nome, BigDecimal prezzo){
     this.nome = nome;
     this.codice = rand.nextInt(99999);
-    this.descrizione = descrizione;
     this.prezzo = prezzo;
     this.iva = new BigDecimal(0.22);
     this.concatenato = nome + "-" + codice;
@@ -72,5 +71,13 @@ public class Prodotto {
 
    public void setName(String nome){
     this.nome = nome;
+   }
+
+   @Override
+   public String toString(){
+    if(nome != null){
+      return codice + "-" + nome;
+    }
+    return null;
    }
 }
